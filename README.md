@@ -1,4 +1,18 @@
-# i18n-editor
+# locale-editor
+An editor for single file locale files in JSON format, e.g.
+
+```json
+{
+  "en": {
+    "hello": "Hello"
+  },
+  "de": {
+    "hello": "Hallo"
+  }
+}
+```
+
+Work in progress.
 
 ## Project setup
 ```
