@@ -244,4 +244,16 @@ export default {
   min-height: 200px;
   overflow: scroll;
 }
+
+/* Overwrite the default to keep the scrollbar always visible */
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  box-shadow: inset 0 0 5px 5px #AEAEAE;
+  border: solid 1px transparent;
+}
 </style>
