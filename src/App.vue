@@ -22,7 +22,8 @@
       <br>New language:
       <input
         ref="newLanguage"
-        type="text">
+        type="text"
+        @keyup.enter="newLanguage">
       <button
         @click="newLanguage">
         Add
@@ -51,8 +52,11 @@
       <br>New path:
       <input
         ref="newPath"
-        type="text">
-      <select ref="newPathLanguage">
+        type="text"
+        @keyup.enter="newPath">
+      <select
+        ref="newPathLanguage"
+        @keyup.enter="newPath">
         <option
           v-for="language in getLanguages(locale)"
           :key="language"
