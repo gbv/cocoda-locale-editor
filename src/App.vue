@@ -5,7 +5,7 @@
     </div>
     <div class="appElement">
       <input
-        id="fileUpload"
+        ref="fileUpload"
         type="file"
         @change="upload">
       <a
@@ -162,6 +162,7 @@ export default {
       let reader = new FileReader()
       reader.onload = event => {
         this.locale = JSON.parse(event.target.result) || {}
+        this.$refs.fileUpload.value = ""
       }
       reader.readAsText(event.target.files[0])
     },
