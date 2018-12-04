@@ -4,15 +4,19 @@
       <h2>Locale Editor</h2>
     </div>
     <div class="appElement">
+      <button
+        style="margin-right: 20px;"
+        @click="reset">
+        Reset
+      </button>
       <input
         ref="fileUpload"
         type="file"
         @change="upload">
-      <a
-        href=""
+      <button
         @click.prevent="download">
         Download
-      </a>
+      </button>
     </div>
     <div class="appElement">
       <br>New language:
@@ -208,6 +212,9 @@ export default {
       } else {
         console.warn("Invalid input.")
       }
+    },
+    reset() {
+      this.locale = {}
     },
   },
 }
