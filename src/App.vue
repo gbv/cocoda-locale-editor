@@ -9,13 +9,25 @@
         @click="reset">
         Reset
       </button>
+      <button
+        @click.prevent="download">
+        Download
+      </button>
+      <br><br>
+      Load from file:
       <input
         ref="fileUpload"
         type="file"
         @change="upload">
+      <br>
+      Load from URL:
+      <input
+        v-model="fileUrl"
+        type="text"
+        size="32">
       <button
-        @click.prevent="download">
-        Download
+        @click.prevent="loadFromUrl">
+        Load
       </button>
     </div>
     <div class="appElement">
@@ -27,7 +39,8 @@
       <button
         @click="newLanguage">
         Add
-      </button><br><br>
+      </button>
+      <br><br>
     </div>
     <div
       id="localeTable"
@@ -69,11 +82,17 @@
         Add
       </button>
     </div>
+    <div
+      v-if="loading"
+      id="loading">
+      <div>Loading...</div>
+    </div>
   </div>
 </template>
 
 <script>
 import _ from "lodash"
+import axios from "axios"
 import FlexibleTable from "vue-flexible-table"
 import FileSaver from "file-saver"
 
@@ -91,7 +110,9 @@ export default {
         de: {
           hello: "Hallo",
         }
-      }
+      },
+      fileUrl: "",
+      loading: false,
     }
   },
   computed: {
@@ -140,6 +161,21 @@ export default {
       }
       return fields
     },
+  },
+  watch: {
+    fileUrl() {
+      let query = {}
+      if (this.fileUrl) {
+        query.fromUrl = this.fileUrl
+      }
+      this.$router.push({ query })
+    },
+  },
+  mounted() {
+    if (this.$route.query.fromUrl) {
+      this.fileUrl = this.$route.query.fromUrl
+      this.loadFromUrl()
+    }
   },
   methods: {
     getPaths(locale) {
@@ -220,6 +256,19 @@ export default {
     reset() {
       this.locale = {}
     },
+    loadFromUrl() {
+      if (this.fileUrl == "" || !this.fileUrl.startsWith("http")) {
+        return
+      }
+      this.loading = true
+      axios.get(this.fileUrl).then(response => response.data).then(data => {
+        this.locale = data
+      }).catch(error => {
+        alert("Error when loading from URL:", error)
+      }).finally(() => {
+        this.loading = false
+      })
+    },
   },
 }
 </script>
@@ -243,6 +292,22 @@ export default {
   height: 0;
   min-height: 200px;
   overflow: scroll;
+}
+
+#loading {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+#loading > div {
+  font-weight: 700;
+  font-size: 2rem;
 }
 
 /* Overwrite the default to keep the scrollbar always visible */
