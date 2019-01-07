@@ -5,6 +5,7 @@ cache:
   directories:
     - $HOME/.npm
 install:
+  - npm i -g npm@5.10.0
   - travis_retry npm ci
 script:
   - npm run lint
