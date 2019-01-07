@@ -48,17 +48,17 @@
       <FlexibleTable
         :items="items"
         :fields="fields">
-        <span
+        <template
           v-for="language in getLanguages(locale)"
-          :key="language"
           :slot="language"
           slot-scope="{ value }">
           <input
+            :key="language"
             type="text"
             style="width: 90%;"
             :value="value.value"
             @keyup="set(language, value.path, $event)">
-        </span>
+        </template>
       </FlexibleTable>
     </div>
     <div class="appElement">
