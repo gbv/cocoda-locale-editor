@@ -292,7 +292,6 @@ export default {
   flex: 1;
   height: 0;
   min-height: 200px;
-  overflow: scroll;
 }
 
 #loading {
