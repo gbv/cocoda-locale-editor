@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - "7"
+cache:
+  directories:
+    - $HOME/.npm
+install:
+  - travis_retry npm ci
+script:
+  - npm run lint
+  - npm run build
+deploy:
+  provider: pages
+  local-dir: dist
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: master
