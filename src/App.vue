@@ -255,6 +255,7 @@ export default {
     },
     reset() {
       this.locale = {}
+      this.fileUrl = ""
     },
     loadFromUrl() {
       if (this.fileUrl == "" || !this.fileUrl.startsWith("http")) {
