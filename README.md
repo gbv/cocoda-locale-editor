@@ -1,4 +1,4 @@
-# locale-editor
+# cocoda-locale-editor
 An editor for single file locale files in JSON format, e.g.
 
 ```json
