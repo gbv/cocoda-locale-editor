@@ -1,11 +1,11 @@
 language: node_js
 node_js:
-  - "7"
+  - "8"
 cache:
   directories:
     - $HOME/.npm
 install:
-  - npm i -g npm@5.10.0
+  - npm i -g npm@6
   - travis_retry npm ci
 script:
   - npm run lint
