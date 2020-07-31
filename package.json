@@ -12,13 +12,13 @@
     "file-saver": "^2.0.2",
     "lodash": "^4.17.19",
     "vue": "^2.6.11",
-    "vue-flexible-table": "^0.3.3",
-    "vue-router": "^3.1.6"
+    "vue-flexible-table": "^0.3.7",
+    "vue-router": "^3.3.4"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.2.3",
-    "@vue/cli-plugin-eslint": "^4.2.3",
-    "@vue/cli-service": "^4.2.3",
+    "@vue/cli-plugin-babel": "^4.4.6",
+    "@vue/cli-plugin-eslint": "^4.4.6",
+    "@vue/cli-service": "^4.4.6",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.2.2",
