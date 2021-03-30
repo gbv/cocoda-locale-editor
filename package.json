@@ -10,18 +10,18 @@
   "dependencies": {
     "axios": "^0.21.1",
     "file-saver": "^2.0.5",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "vue": "^2.6.12",
     "vue-flexible-table": "^0.3.7",
-    "vue-router": "^3.4.9"
+    "vue-router": "^3.5.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.10",
-    "@vue/cli-plugin-eslint": "^4.5.10",
-    "@vue/cli-service": "^4.5.10",
+    "@vue/cli-plugin-babel": "^4.5.12",
+    "@vue/cli-plugin-eslint": "^4.5.12",
+    "@vue/cli-service": "^4.5.12",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.17.0",
-    "eslint-plugin-vue": "^7.4.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue": "^7.8.0",
     "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {
