@@ -16,7 +16,26 @@ Currently hosted on GitHub Pages at https://gbv.github.io/cocoda-locale-editor/.
 
 Work in progress.
 
-## How To Use
+## Table of Contents
+- [Install](#install)
+- [Usage](#usage)
+  - [Starting from scratch](#starting-from-scratch)
+  - [Using an existing file](#using-an-existing-file)
+- [Maintainers](#maintainers)
+- [Publish](#publish)
+- [Contribute](#contribute)
+- [License](#license)
+
+## Install
+```sh
+npm ci
+# Run dev server on port 8093
+npm run dev
+# Build the application (into folder dist/)
+npm run build
+```
+
+## Usage
 
 ### Starting from scratch
 
@@ -34,30 +53,18 @@ The latter will also add a URL parameter to the application so that the file can
 
 You can add languages with the field above the table, or add keys with the field below the table. When you are finished editing, save the file by clicking the "Download" button at the top. You can then commit the file into your repository.
 
-## Project setup
-```
-npm install
-```
+## Maintainers
+- [@stefandesu](https://github.com/stefandesu)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Publish
+Currently, the `master` branch is directly deployed to GitHub Pages.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Contribute
+Please use [GitHub issues](https://github.com/gbv/cocoda-locale-editor/issues) for bug reports, feature requests or questions.
 
-### Run your tests
-```
-npm run test
-```
+PRs accepted.
 
-### Lints and fixes files
-```
-npm run lint
-```
+Small note: If editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## License
+MIT © 2018 Verbundzentrale des GBV (VZG)
