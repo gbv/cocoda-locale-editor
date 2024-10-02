@@ -10,11 +10,11 @@
     "fix": "eslint --fix"
   },
   "dependencies": {
-    "axios": "^1.2.1",
+    "axios": "^1.7.7",
     "file-saver": "^2.0.5",
     "lodash": "^4.17.21",
-    "vue": "^2.7.14",
-    "vue-flexible-table": "^0.3.8",
+    "vue": "^2.7.16",
+    "vue-flexible-table": "^0.4.0",
     "vue-router": "^3.6.5"
   },
   "devDependencies": {
