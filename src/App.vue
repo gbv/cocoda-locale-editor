@@ -99,7 +99,7 @@ import FileSaver from "file-saver"
 export default {
   name: "App",
   components: {
-    FlexibleTable
+    FlexibleTable,
   },
   data() {
     return {
@@ -109,7 +109,7 @@ export default {
         },
         de: {
           hello: "Hallo",
-        }
+        },
       },
       fileUrl: "",
       loading: false,
@@ -129,12 +129,12 @@ export default {
       let items = []
       for (let path of this.getPaths(this.locale)) {
         let item = {
-          path
+          path,
         }
         for (let language of this.getLanguages(this.locale)) {
           item[language] = {
             value: _.get(this.locale, `${language}.${path}`, ""),
-            path
+            path,
           }
         }
         items.push(item)
@@ -148,7 +148,7 @@ export default {
           width: "20%",
           minWidth: "200px",
           align: "left",
-        }
+        },
       ]
       for (let language of this.getLanguages(this.locale)) {
         fields.push({
@@ -214,7 +214,7 @@ export default {
       _.set(this.locale, `${language}.${path}`, event.target.value)
     },
     download() {
-      var blob = new Blob([JSON.stringify(this.locale, null, 2)], {type: "text/plain;charset=utf-8"})
+      let blob = new Blob([JSON.stringify(this.locale, null, 2)], {type: "text/plain;charset=utf-8"})
       FileSaver.saveAs(blob, "locale.json")
     },
     newLanguage() {
