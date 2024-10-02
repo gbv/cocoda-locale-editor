@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "dev": "vite",
+    "build": "vite build",
     "lint": "eslint",
     "fix": "eslint --fix"
   },
@@ -18,12 +18,9 @@
     "vue-router": "^3.6.5"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^5.0.8",
-    "@vue/cli-plugin-eslint": "^5.0.8",
-    "@vue/cli-service": "^5.0.8",
-    "babel-eslint": "^10.1.0",
+    "@vitejs/plugin-vue2": "^2.3.1",
     "eslint": "~9.11",
     "eslint-config-gbv": "~2.1",
-    "vue-template-compiler": "^2.7.14"
+    "vite": "^5.4.8"
   }
 }
